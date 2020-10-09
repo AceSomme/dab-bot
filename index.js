@@ -2,6 +2,7 @@ const Discord = require('discord.js')
 const client = new Discord.Client
 const config = require('./config.json')
 
+
 client.on('message', message => {
     let word = ['dab', "d a b", "da b", "d ab"]
     let founddab = false;
@@ -12,10 +13,14 @@ client.on('message', message => {
         if(message.author.bot){
             return
         }else{
-        message.channel.send('I love dabbing')
-        let names = ["dab1.jpg", "dab2.gif", "dab3.jpg", "dab4.jpg", "dab5.png"]
+            let names = ["rg1ymsn.jpeg", "F5kvlmc.gif", "bz7oWlZ.jpeg", "cW3586q.jpeg", "C5OLoOt.png"]
         let random = Math.floor(Math.random() * Math.floor(names.length))
-        message.channel.send(names[random])
+        const exampleEmbed = new Discord.MessageEmbed()
+	        .setColor('RANDOM')
+	        .setTitle('I love dabbing')
+            .setURL('https://i.imgur.com/'+names[random])
+            .setImage('https://i.imgur.com/'+names[random])
+        message.channel.send(exampleEmbed)
         }
     }
 })
